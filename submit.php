@@ -7,11 +7,20 @@ include 'vendor/autoload.php';
 // Returns a hex code for an attractive color
 RandomColor::one(); 
 
+// Returns one yellow or blue color
+$mixColor = RandomColor::one(array(
+    'hue' => array()
+));
+
+//echo $mixColor; 
+
+//echo '<div style="background-color: '.$mixColor.'; height: 75px; width: 75px; "></div>';
+
 if(isset($_POST['colorName'])){
     
     $color = $_POST['colorName']; 
     
-        // Returns an array of ten green colors
+          // Returns an array of ten green colors
         $randomColor = RandomColor::many(10, array(
            'hue' => $color
         ));
